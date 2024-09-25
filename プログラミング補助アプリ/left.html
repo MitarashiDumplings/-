@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Left Frame</title>
+    <script>
+        function transferText() {
+            var text = document.getElementById("question").innerText;
+            parent.rightFrame.document.getElementById("inputField").value = text;
+        }
+    </script>
+</head>
+<body>
+    <p id="question">
+	次のプログラムはリストを逆順に表示するプログラムですがエラーになります。なぜか答えなさい。<br>
+	また、どのように改良すると正常なプログラムになるか答えなさい。<br>
+
+	li = [1,2,3,4,5]<br>
+	li = li[:-1]<br>
+	print(li)。
+</p>
+    <button onclick="transferText()">転送ボタン</button>
+</body>
+</html>

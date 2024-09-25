@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Right Frame</title>
+    <style>
+        /* 初期のテキストエリアのスタイル */
+        #inputField {
+            width: 100%;  /* 横幅をフレームいっぱいに広げる */
+            min-height: 50px;  /* 最小高さ */
+            resize: none;  /* ユーザーによる手動のサイズ変更を無効化 */
+            overflow: hidden;  /* テキストがあふれた際にスクロールバーが表示されないようにする */
+        }
+    </style>
+    <script>
+        function adjustTextareaHeight(textarea) {
+            textarea.style.height = "auto";  // 高さを自動調整モードにする
+            textarea.style.height = textarea.scrollHeight + "px";  // テキスト量に応じた高さに設定
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="inputField">入力欄:</label>
+        <textarea id="inputField" name="inputField" oninput="adjustTextareaHeight(this)"></textarea> <!-- 入力時に高さ調整 -->
+    </form>
+</body>
+</html>
